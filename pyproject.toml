@@ -1,0 +1,64 @@
+[project]
+name = "transparency-mcp"
+version = "0.1.0"
+description = "MCP server to analyze governments' transparency data with an extensible multi-format fetcher framework."
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "transparency-mcp contributors" }]
+keywords = ["mcp", "fastmcp", "transparency", "government", "open-data", "aiohttp"]
+
+dependencies = [
+    "fastmcp>=3.4.5",
+    "aiohttp>=3.10",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.2",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+]
+
+[project.scripts]
+transparency-mcp = "transparency_mcp.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/transparency_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "PL"]
+ignore = [
+    "PLR0913",   # too many args (OK for tool functions)
+    "PLR0917",   # too many positional args (tool functions)
+    "PLR2004",   # magic values in comparisons (tests)
+    "E501",      # line length handled by formatter
+    "PLC0415",   # imports inside functions (intentional lazy imports)
+    "B024",      # ABC without abstractmethod (Template Method uses NotImplementedError)
+    "B008",      # Field() in defaults (standard Pydantic/FastMCP pattern)
+    "PLR0124",   # `f == f` NaN guard comparison
+    "E402",      # module-level imports not at top (registration side-effects)
+    "B017",      # pytest.raises(Exception) for protocol errors
+    "PLW0603",   # global statement for singleton settings cache
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004", "B017", "S101"]

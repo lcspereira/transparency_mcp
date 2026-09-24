@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      "agency_id": 95,
+      "toptier_code": "012",
+      "abbreviation": "USDA",
+      "agency_name": "Department of Agriculture",
+      "congressional_justification_url": "https://www.usda.gov/cj",
+      "active_fy": "2026",
+      "active_fq": "3",
+      "outlay_amount": 165771730202.59,
+      "obligated_amount": 168255288181.76,
+      "budget_authority_amount": 476747723527.36,
+      "current_total_budget_authority_amount": 15823226897068.67,
+      "percentage_of_total_budget_authority": 0.030129614308676812,
+      "agency_slug": "department-of-agriculture"
+    },
+    {
+      "agency_id": 315,
+      "toptier_code": "097",
+      "abbreviation": "DOD",
+      "agency_name": "Department of Defense",
+      "congressional_justification_url": "https://comptroller.defense.gov",
+      "active_fy": "2026",
+      "active_fq": "3",
+      "outlay_amount": 543210987654.32,
+      "obligated_amount": 560000000000.00,
+      "budget_authority_amount": 850000000000.00,
+      "current_total_budget_authority_amount": 15823226897068.67,
+      "percentage_of_total_budget_authority": 0.0536,
+      "agency_slug": "department-of-defense"
+    },
+    {
+      "agency_id": 456,
+      "toptier_code": "020",
+      "abbreviation": "TREAS",
+      "agency_name": "Department of the Treasury",
+      "congressional_justification_url": "https://home.treasury.gov/cj",
+      "active_fy": "2026",
+      "active_fq": "3",
+      "outlay_amount": 98765432100.00,
+      "obligated_amount": 100000000000.00,
+      "budget_authority_amount": 210000000000.00,
+      "current_total_budget_authority_amount": 15823226897068.67,
+      "percentage_of_total_budget_authority": 0.0133,
+      "agency_slug": "department-of-the-treasury"
+    }
+  ]
+}
